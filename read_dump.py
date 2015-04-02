@@ -72,7 +72,7 @@ for cloud_id in np.unique(label):
     #cloud_region = ds.h.all_data().cut_region(["obj['cloud_id'] == {0}".format(cloud_id)])
 
     for direction in 'xyz':
-        proj = yt.ProjectionPlot(ds, direction, ('deposit','all_density'), Npix=1024)
+        proj = yt.ProjectionPlot(ds, direction, ('deposit','all_density'))
         proj.set_zlim('all', 1e38, 1e41)
         proj.set_cmap('all','cubehelix')
         proj.save("{1}_projection_cloud{0}.png".format(cloud_id, direction))
