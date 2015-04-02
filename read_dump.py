@@ -31,7 +31,7 @@ bbox = np.array([[min(data['particle_position_x']), max(data['particle_position_
 
 loading_params = {'length_unit':kiloparsec.in_cgs(),
                   'mass_unit':gram.in_cgs(),
-                  'time_unit':second.in_cgs()
+                  'time_unit':second.in_cgs(),
                   'velocity_unit':(centimeter/second).in_cgs(),
                  }
 
