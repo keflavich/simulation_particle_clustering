@@ -45,7 +45,7 @@ for ii in (1,10,100):
 
     direction = 'z'
     proj = yt.ProjectionPlot(ds, direction, ('deposit','all_density'),)
-    proj.set_zlim('all', 1e38, 1e41)
+    proj.set_zlim('all', 1e-10, 1e-5)
     proj.set_cmap('all','cubehelix')
     proj.save("z_projection_every{0}th.png".format(ii))
 
@@ -59,7 +59,7 @@ for ii in range(4):
 
     for direction in 'xyz':
         proj = yt.ProjectionPlot(ds, direction, ('deposit','all_density'),)
-        proj.set_zlim('all', 1e38, 1e41)
+        proj.set_zlim('all', 1e-10, 1e-5)
         proj.set_cmap('all','cubehelix')
         proj.save("{1}_projection_{0}th_quarter.png".format(ii, direction))
 
@@ -73,6 +73,6 @@ for cloud_id in np.unique(label):
 
     for direction in 'xyz':
         proj = yt.ProjectionPlot(ds, direction, ('deposit','all_density'))
-        proj.set_zlim('all', 1e38, 1e41)
+        proj.set_zlim('all', 1e-10, 1e-5)
         proj.set_cmap('all','cubehelix')
         proj.save("{1}_projection_cloud{0}.png".format(cloud_id, direction))
